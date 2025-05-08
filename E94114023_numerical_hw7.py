@@ -94,12 +94,10 @@ print('A=')
 print(A)
 print('B=')
 print(B)
-'''
 print('(a)Jacobi method:')
 jacobi(A, U, L, D, B)
 print('(b)Gauss_seidel method:')
 gauss_seidel(A, U, L, D, B)
-'''
 print('(c)SOC method:')
 SOC(A, U, L, D, B,0.5)
 print('(d)The conjugate gradient method:')
