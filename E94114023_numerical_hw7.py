@@ -31,3 +31,26 @@ D=np.array(
     [0,0,0,0,4,0],
     [0,0,0,0,0,4]
 )
+bt=np.array([0,-1,9,4,8,6])
+B=bt.T
+def jacobi(a,u,l,d,b):
+    xt=np.zeros(6)
+    X=xt.T
+    Dv=d.linalg.inv()
+    T=-1*Dv.dot(u+l)
+    C=Dv.dt(b)
+    e=a.dot(X)-b
+    err=e.linalg.det
+    while abs(err)>0.001:
+        Xnew=T.dot(X)+C
+        X=Xnew
+        e=a.dot(X)-b
+        err=e.linalg.det
+    return X
+
+
+
+
+
+
+    
